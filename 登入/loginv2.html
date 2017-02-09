@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login</title>
+    <!-- 文字跳動效果，引入CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
+    <style type="text/css">
+    body {
+        /*做一個書的背景*/
+        background-attachment: fixed;
+        background-image: url(img/background_login.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        /*background-color: #17DECF;*/
+    }
+    
+    .titleWelcome {
+        margin: 10px auto;
+        text-align: center;
+        color: red;
+        /*display: block;*/
+        padding: 15px;
+        /*background-color: #EB69EE;*/
+    }
+    
+    .login {
+        width: 275px;
+        height: 150px;
+        margin: 100px auto;
+        padding: 10px;
+        position: right;
+        background: white;
+        border-style: double;
+        box-shadow: 10px 10px  #DCE0DE;
+    }
+    
+    .loginButton {
+        /*position: center;*/
+        /*background: #F4973C;*/
+        margin: 10px auto;
+        text-align: center;
+        padding-right: 40px;
+        /*用來對齊表單欄位*/
+    }
+    
+    button {
+        background-color: #75E0DE;
+        border-bottom: solid;
+        /*text-shadow: 1px 1px 1px #B821E1; */
+    }
+    </style>
+    <script type="text/javascript" src="../jquery.js">
+    $(document).ready(init);
+
+    function init() {
+
+    }
+    </script>
+</head>
+
+<body>
+    <div class="titleWelcome">
+        <!-- 引入三個CSS效果，做出跳躍文字-->
+        <h1 class="animated infinite bounce">歡迎光臨!!!</h1>
+    </div>
+    <div id="bookv3" >
+        <!-- <img src="img/v3.jpg"> -->
+        <div class="login">
+            <label id="account">帳號</label>
+            <input type="text" name="account">
+            <br>
+            <label id="password">密碼</label>
+            <input type="password" name="password">
+            <div class="loginButton">
+                <button>登入</button>
+                <button>註冊</button>
+                <button>忘記密碼</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

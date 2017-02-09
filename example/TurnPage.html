@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Transform</title>
+    <style>
+    body {
+        -webkit-perspective: 800px;
+        -moz-perspective: 800px;
+        perspective: 800px;
+        -webkit-perspective-origin: center center;
+        -moz-perspective-origin: center center;
+        perspective-origin: center center;
+    }
+    
+    .book {
+        margin: 10px auto;
+        width: 700px;
+        height: 700px;
+        position: center;
+        background-color: gray;
+    }
+    
+    .bookP1 {
+        margin: 100px 0px 100px 150px;
+        width: 200px;
+        height: 200px;
+        float: left;
+        /*background-color: red;*/
+        background: url(../img drat/P4.jpg) no-repeat;
+        position: left;
+        /*動畫效果*/
+        transform-style: preserve-3d;
+        transition: all 1s;
+    }
+    
+    .bookP3 {
+        margin: 100px 100px 100px 0px;
+        width: 200px;
+        height: 200px;
+        float: left;
+        /*background-color: #1DEBF3;*/
+        background:url(../img drat/P2.jpg) no-repeat;
+        backface-visibility: hidden;
+        position: right;
+        transform-style: preserve-3d;
+        transition: all 1s;
+    }
+    
+    #bookP1.flip {
+        transform-style: preserve-3d;
+        transform: rotateY(180deg);
+    }
+    
+    #bookP3.flip{
+        transform-style: preserve-3d;
+        transform: rotateY(180deg);
+    }
+    
+    img {
+        transform: translateZ(70px);
+    }
+    </style>
+    <script src="../jquery.js"></script>
+    <script>
+    $(document).ready(init);
+
+    function init() {
+        $("#bookP1").click(flipHandler);
+        $("#bookP3").click(flipHandler);
+    }
+
+    function flipHandler() {
+        $("#bookP1").toggleClass("flip");
+        $("#bookP3").toggleClass("flip"); //切換翻轉，flip是翻轉的意思
+    }
+    </script>
+</head>
+
+<body>
+    <div class="book" id="book">
+        <div class="bookP1" id="bookP1">
+            <div id="right"><img src="../img drat/P1.jpg" height="200" width="200"></div>
+        </div>
+        <div class="bookP3" id="bookP3">
+            <div id="left"><img src="../img drat/P3.jpg" height="200" width="200"></div>
+        </div>
+    </div>
+</body>
+
+</html>
